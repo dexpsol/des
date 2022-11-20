@@ -1,0 +1,97 @@
+@mixin hd-bef-atr($hd-width, $hd-height, $hd-bg, $hd-btm){
+    content: "";
+    position: absolute;
+    display: block;
+    width: ($hd-width);
+    height: ($hd-height);
+    background-color: ($hd-bg);
+    bottom: ($hd-btm);
+  }
+
+  @mixin flex-flexbox($jsty-content){
+    display: flex;
+    justify-content: ($jsty-content);
+    align-items: center;
+  }
+
+  @mixin btn-similar($border-radius){
+    display: inline-block;
+    border-radius: $border-radius;
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: "Jost", sans-serif;
+    transition: 0.3s;
+  }
+
+@mixin faq {
+  ul {
+    padding: 0;
+    list-style: none;
+  
+    li {
+      padding: 20px;
+      background: #fff;
+      border-radius: 4px;
+      position: relative;
+      margin-bottom: 15px;
+  
+      i.icon-help {
+      font-size: 2.4rem;
+      position: absolute;
+      right: 0;
+      left: 20px;
+      color: $light-blue;
+      }
+
+      span.number {
+    color: $light-blue;
+    font-weight: 600;
+    font-size: 1.8rem;
+    padding-right: 10px;
+    margin-left: -30px;
+      }
+  
+      a {
+      display: block;
+      position: relative;
+      font-family: "Poppins", sans-serif;
+      font-size: 1.6rem;
+      line-height: 24px;
+      font-weight: 500;
+      padding: 0 30px;
+      outline: none;
+      cursor: pointer;
+      &.collapsed {
+        color: #37517e;
+        transition: 0.3s;
+        &:hover {
+          color: #47b2e4;
+        }
+        .icon-show {
+          display: inline-block;
+        }
+  
+        .icon-close {
+          display: none;
+        }
+      }
+  
+      i.bx.v-icn {
+      font-size: 2.4rem;
+      position: absolute;
+      right: 0;
+      top: 0;
+      }
+  
+      i.icon-show {
+        display: none;
+      }
+      }
+  
+      p {
+      margin-bottom: 0;
+      padding: 10px 0 0 0;
+      }
+    }
+  }
+}
