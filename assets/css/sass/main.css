@@ -197,11 +197,24 @@ body a:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Jost", sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h4 a {
+  font-family: "Roboto", sans-serif;
 }
 
-p, ul li, span, .btn {
+p {
+  font-family: "Poppins", sans-serif;
+}
+
+p,
+ul li,
+span,
+.btn {
   font-size: 1.6rem;
 }
 
@@ -442,7 +455,7 @@ section.services .service-box {
 }
 section.services .service-box:hover {
   transform: translateY(-10px);
-  border-color: #009961;
+  border-color: #a2655d;
 }
 section.services .service-box i {
   color: #ed2000;
@@ -487,10 +500,9 @@ section.call-action .call-action-data .call-action-rt a.btn.call-action {
   font-family: "Jost", sans-serif;
   transition: 0.3s;
   padding: 12px 40px;
-  margin: 10px;
+  margin: 0 10px;
   border: 2px solid #fff;
   color: #fff;
-  margin-top: 30px;
 }
 
 /*------Team Section-----*/
@@ -757,7 +769,8 @@ section.contact .info.info-rt form .form-group label {
 section.contact .info.info-rt form .form-group input {
   height: 44px;
 }
-section.contact .info.info-rt form .form-group input, section.contact .info.info-rt form .form-group textarea {
+section.contact .info.info-rt form .form-group input,
+section.contact .info.info-rt form .form-group textarea {
   box-shadow: none;
   font-size: 14px;
   border-radius: 4px;
