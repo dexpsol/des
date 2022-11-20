@@ -21,7 +21,7 @@
   padding: 15px 0;
 }
 #header.header-scrolled {
-  background: rgba(40, 58, 90, 0.9);
+  background: rgba(145, 72, 61, 0.831372549);
 }
 #header h1.logo {
   font-size: 3rem;
@@ -87,7 +87,8 @@ footer .footer-dtl .footer-cntct h3 {
   font-weight: 600;
   color: #37517e;
 }
-footer .footer-dtl .footer-cntct p, footer .footer-dtl .footer-cntct .cntct-info span {
+footer .footer-dtl .footer-cntct p,
+footer .footer-dtl .footer-cntct .cntct-info span {
   font-size: 1.4rem;
   line-height: 24px;
   margin-bottom: 0;
@@ -152,11 +153,9 @@ footer .footer-dtl .footer-links .social-links a {
   color: #fff;
   font-size: 1.4rem;
 }
-.footer-btm .copyright {
-  float: left;
-}
-.footer-btm .credits {
-  float: right;
+
+.footer-cntct img {
+  width: 100px;
 }
 
 @-webkit-keyframes up-down {
