@@ -84,40 +84,7 @@
         </div>
     </section>
 
-    <!-------Clients Section------>
 
-    <!-- <section class="clients bg-gray">
-        <div class="container">
-            <div class="clients-data" data-aos="zoom-in">
-                <div class="row" data-aos="zoom-in">
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <!-------About Us Section----->
 
@@ -461,7 +428,24 @@
         </div>
     </section> -->
 
+    <!-------Clients Section------>
 
+    <section class="clients bg-gray">
+        <div class="container">
+            <div class="sec-hd text-center">
+                <h2 class="cntr-hd">Our Partners</h2>
+                <div class="clients-data" data-aos="zoom-in">
+                    <div class="clients-img d-flex justify-content-center">
+
+
+                        <img src="assets/img/clients/client1.jpg" class="img-fluid mx-2" alt="">
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-----Contact Section---->
 
@@ -469,9 +453,7 @@
         <div class="container" data-aos="fade-up">
             <div class="sec-hd text-center">
                 <h2 class="cntr-hd">Contact</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                    fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <p>Ready To Make a Real Change? Let’s Build Thing Together!</p>
             </div>
 
             <div class="row">
@@ -505,31 +487,40 @@
 
                 <div class="col-lg-7 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
                     <div class="info info-rt">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <form action="php/send.php" method="post" role="form" class="php-email-form">
                             <div class="row">
                                 <div class="form-group col-md-6">
-                                    <label for="name">Your Name</label>
-                                    <input type="text" name="name" class="form-control" id="name" required="">
+                                    <label for="name">First Name</label>
+                                    <input type="text" name="first_name" class="form-control" id="first_name"
+                                        required="">
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="name">Your Email</label>
+                                    <label for="name">Last Name</label>
+                                    <input type="text" name="last_name" class="form-control" id="last_name" required="">
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="name">Email</label>
                                     <input type="email" class="form-control" name="email" id="email" required="">
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Subject</label>
-                                <input type="text" class="form-control" name="subject" id="subject" required="">
+                                <div class="form-group col-md-6">
+                                    <label for="name">Phone</label>
+                                    <input type="number" class="form-control" name="phone" id="phone" required="">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="name">Message</label>
                                 <textarea class="form-control" name="message" rows="10" required=""></textarea>
                             </div>
+
                             <!-- <div class="my-3">
                                 <div class="loading">Loading</div>
                                 <div class="error-message"></div>
                                 <div class="sent-message">Your message has been sent. Thank you!</div>
                             </div> -->
-                            <div class="text-center"><button type="submit">Send Message</button></div>
+                            <button type="submit">Send Message</button>
                         </form>
 
                     </div>
@@ -619,6 +610,143 @@
     <!-- <script src="assets/vendor/waypoints/noframework.waypoints.js"></script> -->
     <script src="assets/vendor/php-email-form/validate.js"></script>
     <script src="assets/js/script.js"></script>
+    <script>
+
+        $("#phone").keydown(function (e) {
+            var key = e.charCode || e.keyCode || 0;
+            $text = $(this);
+            if (key !== 8 && key !== 9) {
+                if ($text.val().length === 3) {
+                    $text.val($text.val() + "-");
+                }
+                if ($text.val().length === 7) {
+                    $text.val($text.val() + "-");
+                }
+            }
+            return;
+        });
+
+        // next script
+        // Setting alerts if not a valid phone number
+        $("input").on("input", function () {
+            if ($(this).val().length >= 12 && regex.test($(this).val())) {
+                $(".result").text("The phone number appears valid.");
+                $(".result").addClass("alert alert-success");
+                $(".result").removeClass("alert-danger");
+            } else {
+                $(".result").text("This phone number does NOT appear to be valid.");
+                $(".result").addClass("alert alert-danger");
+                $(".result").removeClass("alert-success");
+            }
+
+            if ($(this).val().length < 12) {
+                $(".result").text("");
+                $(".result").removeClass("alert alert-danger alert-success");
+            }
+        });
+    </script>
+    <!-- test end -->
+    <script>
+        $(document).ready(function () {
+            $("#contactBtn").on("click", function () {
+                // Remove previous status message
+                $(".status").html("");
+
+                // Email and name regex
+                var regEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+                var regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+
+                //number
+                var phone_regex = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+
+                // Get input values
+                var first_name = $("#first_name").val();
+                var last_name = $("#last_name").val();
+                var phone = $("#phone").val();
+                var message = $("#message").val();
+                var email = $("#email").val();
+
+                // Validate input fields
+                if (first_name.trim() == "") {
+                    //alert('Please enter your email.');
+                    $(".status").html(
+                        '<p class="error">Please enter your first name.</p>'
+                    );
+                    $("#first_name").focus();
+                    return false;
+                } else if (last_name.trim() == "") {
+                    //alert('Please enter your email.');
+                    $(".status").html(
+                        '<p class="error">Please enter your last name.</p>'
+                    );
+                    $("#last_name").focus();
+                    return false;
+                } else if (email.trim() == "") {
+                    //alert('Please enter your email.');
+                    $(".status").html('<p class="error">Please enter your email.</p>');
+                    $("#email").focus();
+                    return false;
+                } else if (email.trim() != "" && !regEmail.test(email)) {
+                    //alert('Please enter a valid email.');
+                    $(".status").html(
+                        '<p class="error">Please enter a valid email.</p>'
+                    );
+                    $("#email").focus();
+                    return false;
+                } else if (phone.trim() == "") {
+                    //alert('Please enter your email.');
+                    $(".status").html(
+                        '<p class="error">Please enter your phone number.</p>'
+                    );
+                    $("#phone").focus();
+                    return false;
+                } else if (!phone.match(phone_regex) || phone.length == 0) {
+                    $(".status").html(
+                        '<p class="error">Please enter only numbers in this field.</p>'
+                    );
+                    $("#phone").focus();
+                    return false;
+                } else if (message.trim() == "") {
+                    //alert('Please enter your email.');
+                    $(".status").html(
+                        '<p class="error">Please enter your message.</p>'
+                    );
+                    $("#message").focus();
+                    return false;
+                } else {
+                    // Post subscription form via Ajax
+                    $.ajax({
+                        type: "POST",
+                        url: "php/send.php",
+                        dataType: "json",
+                        data: {
+                            contact_frm: 1,
+                            first_name: first_name,
+                            last_name: last_name,
+                            phone: phone,
+                            message: message,
+                            email: email,
+                        },
+                        beforeSend: function () {
+                            $("#contactBtn").attr("disabled", "disabled");
+                            $(".content-frm").css("opacity", ".5");
+                        },
+                        success: function (data) {
+                            alert("Message send successfully");
+                            if (data.status == "ok") {
+                                $("#subsFrm")[0].reset();
+                                // $(".status").html('<p class="success">' + data.msg + "</p>");
+                            } else {
+                                $(".status").html('<p class="error">' + data.msg + "</p>");
+                            }
+                            $("#contactBtn").removeAttr("disabled");
+                            $(".content-frm").css("opacity", "");
+                        },
+                    });
+                }
+            });
+        });
+    </script>
 
 </body>
 

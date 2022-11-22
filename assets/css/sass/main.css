@@ -258,7 +258,6 @@ section {
 /*-----Hero Section-----*/
 .hero-sec {
   width: 100%;
-  height: 85vh;
   padding-top: 10rem;
 }
 .hero-sec .sec1-dtl h4 {
@@ -312,7 +311,6 @@ section {
 /*-------Clients Section-----*/
 section.clients {
   padding: 12px 0;
-  height: 15vh;
   display: flex;
   align-items: center;
 }
