@@ -18,7 +18,7 @@
 #header {
   transition: all 0.5s;
   z-index: 997;
-  padding: 15px 0;
+  padding: 15px 10px;
 }
 #header.header-scrolled {
   background: rgba(145, 72, 61, 0.831372549);
@@ -310,7 +310,7 @@ section {
 
 /*-------Clients Section-----*/
 section.clients {
-  padding: 12px 0;
+  padding: 30px 0;
   display: flex;
   align-items: center;
 }
@@ -859,4 +859,54 @@ a.back-to-top i {
 .cnt-quote {
   justify-content: space-evenly;
   align-items: center;
+}
+
+/*------Media Queries------*/
+@media (max-width: 575px) {
+  section {
+    padding: 40px 0;
+  }
+  .sec-hd h2.cntr-hd,
+section.why-us .row h3 {
+    font-size: 22px;
+    margin-bottom: 40px;
+  }
+  section.why-us .row ul {
+    margin-top: 25px;
+  }
+  section.services .service-box {
+    padding: 30px 20px;
+    margin-bottom: 20px;
+  }
+  .call-action-data .cnt-quote {
+    display: block !important;
+    text-align: center;
+  }
+  section.contact .info.info-rt {
+    margin-top: 30px;
+  }
+  footer .footer-links {
+    margin-top: 20px;
+  }
+  .hero-sec .sec1-dtl .sec1-lt {
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+  .hero-sec .sec1-dtl .sec1-lt h4 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .hero-sec .sec1-dtl .sec1-lt p {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  #header {
+    padding: 10px;
+  }
+  #header nav a.navbar-brand embed {
+    width: 170px;
+  }
+  #header ul.navbar-nav ul {
+    background-color: #91483d;
+  }
 }/*# sourceMappingURL=main.css.map */
